@@ -24,6 +24,13 @@ app.get('/', (req, res) => {
   res.send('Hello World')
 })
 
+//Handle bars
+app.engine('handlebars', exphbs({ defaultLayer: 'main'}));
+app.set('view engine', 'handlebars')
+
+// Set static folder (allows you to dodge the public **)
+app.use(express.static(path.join(__dirname, 'public')))
+// app.use('/static', express.static(path.join(__dirname, 'public')))
 //User routes
 app.use('/users', require('./routes/users'))
 const PORT = process.env.PORT || 5000

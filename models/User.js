@@ -19,7 +19,7 @@ const User = db.define('user', {
       type: Sequelize.STRING
     },
 }, {
-  // timestamps: false
+  timestamps: false
 })
 
 module.exports = User
